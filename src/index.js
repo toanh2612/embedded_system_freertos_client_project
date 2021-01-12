@@ -20,7 +20,7 @@ const webpush = require('web-push');
 const publicVapidKey = CONFIG['PUBLIC_VAPID_KEY'];
 const privateVapidKey = CONFIG['PRIVATE_VAPID_KEY'];
 webpush.setVapidDetails('mailto:toanhkma@gmail.com', publicVapidKey, privateVapidKey);
-// import io from "./socketServer";
+// import socketServer from "./socketServer";
 app.use(express.static(path.resolve(process.cwd(),'front-end')));
 app.set('views', path.resolve(process.cwd(),'src','views'));
 app.set('view engine', 'ejs');
@@ -87,4 +87,4 @@ app.listen( Number(CONFIG["APP_PORT"] || 5000), String(CONFIG["APP_HOST"] || '0.
   console.log(`Run API server ${CONFIG["APP_HOST"]}:${CONFIG["APP_PORT"]}`);
 
 });
-require('./listenRethinkDb')
+

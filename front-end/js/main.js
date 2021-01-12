@@ -76,7 +76,7 @@ const strTime = (dt) => {
 const socket = io(`http://${appHost}:3000`,{transports: ['websocket', 'polling', 'flashsocket']});
 // const socket = io(`http://9d75c3b4bafa.ngrok.io`,{transports: ['websocket', 'polling', 'flashsocket']});
 
-
+console.log(socket);
 const updateDeviceInfo = () => {
   const deviceElement = document.getElementsByName("device");
   deviceElement.forEach((dE)=>{
@@ -234,4 +234,4 @@ setTimeout(()=>{
   deviceElement.forEach((dE)=>{
     socket.emit("request-device-info",{roomId, deviceId: dE.id});
   })
-},2000)
+},3000)
